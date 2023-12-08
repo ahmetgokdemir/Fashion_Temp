@@ -34,9 +34,9 @@ namespace Project.Services.Category.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CategoryDTO _categoryDTO)
+        public async Task<IActionResult> Create(CategoryDTO categoryDTO)
         {
-            var response = await _categoryService.CreateAsync(_categoryDTO);
+            var response = await _categoryService.CreateAsync(categoryDTO);
 
             return CreateActionResultInstance(response);
         }

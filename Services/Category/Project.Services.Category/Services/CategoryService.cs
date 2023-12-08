@@ -39,9 +39,9 @@ namespace Project.Services.Category.Services
             return Response<List<CategoryDTO>>.Success(_mapper.Map<List<CategoryDTO>>(categories), 200);
         }
 
-        public async Task<Response<CategoryDTO>> CreateAsync(CategoryDTO CategoryDTO)
+        public async Task<Response<CategoryDTO>> CreateAsync(CategoryDTO categoryDTO)
         {
-            var category = _mapper.Map<Models.Category>(CategoryDTO);
+            var category = _mapper.Map<Models.Category>(categoryDTO);
             await _categoryCollection.InsertOneAsync(category);
 
             return Response<CategoryDTO>.Success(_mapper.Map<CategoryDTO>(category), 200);
