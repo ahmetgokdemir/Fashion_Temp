@@ -1,0 +1,8 @@
+﻿https://localhost:9443/#!/home   --> açılmazsa Docker uygulamasındaki Containers bölümünde bulunan Portainer restart et..
+admin
+Portainer<..3..2..
+
+SQL Server ↓
+fashionTemp_sqlserverDB
+
+
