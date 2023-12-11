@@ -18,14 +18,15 @@ builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
-builder.Services.Configure<OptionSettings>(builder.Configuration.GetSection("OptionSettings"));
-// builder --> Services, Configuration
+builder.Services.Configure<OptionSettings>(builder.Configuration.GetSection("OptionSettings")); // appsetting.json  --> OptionSettings
+// builder --> Services, Configuration ...
+
 
 // builder.Services.AddMvc();
-
+// IOptions yerine  IOptionSettings kullanýlacak service.cs'lerde..
 builder.Services.AddSingleton<IOptionSettings>(sp =>
 {
-    return sp.GetRequiredService<IOptions<OptionSettings>>().Value; 
+    return sp.GetRequiredService<IOptions<OptionSettings>>().Value;  // GetRequiredService, getservice'den farký, ilgili  servisi bulamazsa ise hata fýrlatýr..
 });
 
 

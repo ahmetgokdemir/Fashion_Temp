@@ -9,33 +9,36 @@ namespace Project.Services.Category.Services
 {
     public class CategoryService : ICategoryService
     {
+        // db işlemlkeri (mongoDB) repository'de olması daha doğru
         private readonly IMongoCollection<Models.Category> _categoryCollection; // table \ MongoDB › Collection
 
         private readonly IMapper _mapper;
 
-        // 2:52 / 19:07 IDatabaseSettings (db'ye erişi,m)
-        public CategoryService(IMapper mapper, IOptionSettings databaseSettings)
+        // IOptions yerine  IOptionSettings kullanılacak service.cs'lerde..
+        public CategoryService(IMapper mapper, IOptionSettings optionSettings)
         {
-            var client = new MongoClient(databaseSettings.ConnectionString); // ** ConnectionString
+            var mongo_connection = new MongoClient(optionSettings.ConnectionString); // ** ConnectionString
 
             // IMongoDatabase --> MongoClient & IMongoCollection 
-            var database = client.GetDatabase(databaseSettings.DatabaseName); // ** DatabaseName
+            var database = mongo_connection.GetDatabase(optionSettings.DatabaseName); // ** DatabaseName
 
-            _categoryCollection = database.GetCollection<Models.Category>(databaseSettings.CategoryCollectionName);
+            _categoryCollection = database.GetCollection<Models.Category>(optionSettings.CategoryCollectionName); // ** Table : Collection
+            // ** SQL › table \ MongoDB › Collection
             _mapper = mapper;
             // 4:54 sonradan public yapacak
         }
 
         public async Task<Response<List<CategoryDTO>>> GetAllAsync()
         {
-            // 7:33 / 19:07 Response<T>
+            //  Response<T>
             // _categoryCollection (IMongoCollection) --> Find
-            // 8:26 get all --> => true (tüm kategorileri döner)
+            //.....  get all --> => true (tüm kategorileri döner)
             var categories = await _categoryCollection.Find(category => true).ToListAsync();
             // return await _context.Set<T>().ToListAsync();
 
             // var categories2 = await _categoryCollection.GetAll().ToListAsync();
 
+            // Static Factory Method ile --  Response.cs'de, Response<T> class nesnesi oluşturulacak..
             return Response<List<CategoryDTO>>.Success(_mapper.Map<List<CategoryDTO>>(categories), 200);
         }
 
@@ -45,8 +48,8 @@ namespace Project.Services.Category.Services
             await _categoryCollection.InsertOneAsync(category);
 
             return Response<CategoryDTO>.Success(_mapper.Map<CategoryDTO>(category), 200);
-            // 14:48 / 19:07 200 (200 OK) --> get ve insert / 204 --> update ve delete
-            //400 no authentication , 403 no authorization , 404 not found
+            // 200 (200 OK) --> get ve insert / 204 --> update ve delete
+            // 400 no authentication , 403 no authorization , 404 not found
 
         }
 

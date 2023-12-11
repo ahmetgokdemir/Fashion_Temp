@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Services.Category",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{C569D4E1-1DB4-4E90-8CA8-6CCF2C00D2C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Shared", "Shared\Project.Shared\Project.Shared.csproj", "{10B31946-F327-4F76-A9F0-B1A46F34F99B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Shared", "Shared\Project.Shared\Project.Shared.csproj", "{10B31946-F327-4F76-A9F0-B1A46F34F99B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{676FB69A-7B39-4414-9E1A-C5F360E5E7C0}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -23,6 +23,7 @@ namespace Project.Shared.DTOs
         // Static Factory Method
         public static Response<T> Success(T data, int statusCode)
         {
+            // Response<T> class nesnesi oluşturuldu..
             return new Response<T> { Data_throughput = data, StatusCode = statusCode, IsSuccessful = true };
         }
 
