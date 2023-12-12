@@ -6,3 +6,11 @@ SQL Server ↓
 fashionTemp_sqlserverDB
 
 
+
+Project.IdentityServer --> IdentityServer.IdentityCore Proje Temp'i
+
+
+
+
+
+

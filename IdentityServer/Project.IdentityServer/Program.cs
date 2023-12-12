@@ -13,6 +13,8 @@ using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.Linq;
+using Project.IdentityServer.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project.IdentityServer
 {
@@ -65,15 +67,15 @@ namespace Project.IdentityServer
                 {
                     var serviceProvider = scope.ServiceProvider;
 
-                    var applicationDbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+                    var applicationDbContext = serviceProvider.GetRequiredService<ApplicationDbContext>(); // GetRequiredService: ApplicationDbContext kısmında hata oluşursa; GetRequiredService exception fırlatır
 
                     applicationDbContext.Database.Migrate();
 
-                    var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                    var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>(); // UserManager, ApplicationUser --> Identity
 
                     if (!userManager.Users.Any())
                     {
-                        userManager.CreateAsync(new ApplicationUser { UserName = "ahmet.gokdemir", Email = "ahmet.gokdemir@gmail.com", City = "Istanbul" }, "Password12*").Wait();
+                        userManager.CreateAsync(new ApplicationUser { UserName = "ahmet.gokdemir", Email = "ahmet.gokdemir@gmail.com", City = "Istanbul" }, "Technosoft-9913").Wait(); // Wait --> async 'yi kullanmaya gerek kalmadı..
                     }
                 }
                 // ApplicationUser.cs --> City added

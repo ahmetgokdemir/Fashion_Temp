@@ -21,15 +21,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deneme_2", "Deneme_2", "{7FE40FF1-7C1D-4D3D-9559-E2A113B93285}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Admin", "Deneme_2\IdentityServer.Admin\IdentityServer.Admin.csproj", "{4BDC130B-67AB-4D6A-9E88-6FE4256D7F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.Admin", "Deneme_2\IdentityServer.Admin\IdentityServer.Admin.csproj", "{4BDC130B-67AB-4D6A-9E88-6FE4256D7F0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deneme_3", "Deneme_3", "{337742D8-23B6-4BA7-9A9F-0D39DF3A0C2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkStore", "Deneme_3\EntityFrameworkStore\EntityFrameworkStore.csproj", "{F9257FA3-7DE5-47C2-80D7-2EEED70EB17C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkStore", "Deneme_3\EntityFrameworkStore\EntityFrameworkStore.csproj", "{F9257FA3-7DE5-47C2-80D7-2EEED70EB17C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{7EB52750-EE01-4264-AE2A-4675C5B78B40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.IdentityServer", "IdentityServer\Project.IdentityServer\Project.IdentityServer.csproj", "{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.IdentityServer", "IdentityServer\Project.IdentityServer\Project.IdentityServer.csproj", "{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
