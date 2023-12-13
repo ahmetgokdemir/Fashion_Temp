@@ -1,4 +1,9 @@
-﻿https://localhost:9443/#!/home   --> açılmazsa Docker uygulamasındaki Containers bölümünde bulunan Portainer restart et..
+﻿
+
+http://localhost:5011/api/Category MongoDB   --> https değil; http 
+
+
+https://localhost:9443/#!/home   --> açılmazsa Docker uygulamasındaki Containers bölümünde bulunan Portainer restart et..
 admin
 Portainer<..3..2..
 
@@ -10,7 +15,12 @@ fashionTemp_sqlserverDB
 Project.IdentityServer --> IdentityServer.IdentityCore Proje Temp'i
 
 
+{
+	"UserName":"hamza.gokdemir",
+	"Email":"hamza.gokdemir@gmail.com",
+	"Password":"Technosoft-9913",
+    "City": "Elazig"
+}
 
 
-
-
+http://localhost:5001/.well-known/openid-configuration
