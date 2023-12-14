@@ -3,6 +3,7 @@
 http://localhost:5011/api/Category MongoDB   --> https değil; http 
 
 
+https://localhost:9443/#!/auth 
 https://localhost:9443/#!/home   --> açılmazsa Docker uygulamasındaki Containers bölümünde bulunan Portainer restart et..
 admin
 Portainer<..3..2..
