@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project.Shared.DTOs
 {
-    public class Response<T>
+    public /*static*/ class Response<T>
     {
         public T Data_throughput { get; set; }
 
