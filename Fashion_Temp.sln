@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.IdentityServer", "IdentityServer\Project.IdentityServer\Project.IdentityServer.csproj", "{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{70D0BB5F-09C9-4C95-8A7C-FA75A7FBDD85}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{70D0BB5F-09C9-4C95-8A7C-FA75A7FBDD85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Services.Discount", "Services\Discount\Project.Services.Discount\Project.Services.Discount.csproj", "{C733D83F-40BC-4DF8-BD14-B93B98D3AD58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C733D83F-40BC-4DF8-BD14-B93B98D3AD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C733D83F-40BC-4DF8-BD14-B93B98D3AD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C733D83F-40BC-4DF8-BD14-B93B98D3AD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C733D83F-40BC-4DF8-BD14-B93B98D3AD58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{10B31946-F327-4F76-A9F0-B1A46F34F99B} = {C569D4E1-1DB4-4E90-8CA8-6CCF2C00D2C6}
 		{8DAD60CC-39CE-49D0-85B5-8CFF1FD0951B} = {7EB52750-EE01-4264-AE2A-4675C5B78B40}
 		{70D0BB5F-09C9-4C95-8A7C-FA75A7FBDD85} = {4AE5872A-CFAA-4EB7-B903-19863199E32D}
+		{C733D83F-40BC-4DF8-BD14-B93B98D3AD58} = {70D0BB5F-09C9-4C95-8A7C-FA75A7FBDD85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EDAAEA8F-FC20-44CF-8E0C-3BAB8F021EA3}

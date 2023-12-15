@@ -4,25 +4,24 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:19818",
+      "applicationUrl": "http://localhost:28335",
       "sslPort": 0
     }
   },
   "profiles": {
-    "Project.Services.Category": { // "http" yerine "Project.Services.Category" olarak değiştirildi
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true, // ss  http://localhost:5011/swagger/index.html
-      "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5011",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Project.Services.Discount": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5014",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

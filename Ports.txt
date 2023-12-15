@@ -2,9 +2,9 @@
 
 
 Services:
-- catalogAPI		-> 5011
-
----
+- catalogAPI	-> 5011
+- discountAPI	-> 5014
+---------------
 
 - identityserver4	-> 5001
 
