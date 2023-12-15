@@ -13,7 +13,7 @@ using static IdentityServer4.IdentityServerConstants;
 
 namespace Project.IdentityServer.Controllers
 {
-    [Authorize(LocalApi.PolicyName)]
+    //[Authorize(LocalApi.PolicyName)]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -45,13 +45,16 @@ namespace Project.IdentityServer.Controllers
             return NoContent();
         }
 
+        // sadece resouce owner ile token alanlar bu metodu kullanabilir... User -> JwtRegisteredClaimNames.Sub
         [HttpGet]
         public async Task<IActionResult> GetUser()
         {
             var userIdClaim = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub); // JwtRegisteredClaimNames
 
-            if (userIdClaim == null) return BadRequest();
+            // credential  için çalışacak 
+            if (userIdClaim == null) return Ok(new { Id = "-", UserName = "Anonim", Email = "-", City = "-" }); // return BadRequest();
 
+            // resource için çalışacak
             var user = await _userManager.FindByIdAsync(userIdClaim.Value);
 
             if (user == null) return BadRequest();

@@ -9,17 +9,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-// builder.Services.AddControllers();
-builder.Services.AddControllers(opt =>
-{
-    opt.Filters.Add(new AuthorizeFilter());
-});
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+/// apiyi koruma altýna almak 
+// builder.Services.AddControllers();
+// ** step 1  
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add(new AuthorizeFilter());
+});
 
+// ** step 2 artýk api koruma altýnda ve token'ý olan bu apiye istek yapabilir...
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.Authority = builder.Configuration["IdentityServerURL"];

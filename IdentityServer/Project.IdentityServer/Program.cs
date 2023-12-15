@@ -67,6 +67,7 @@ namespace Project.IdentityServer
                 {
                     var serviceProvider = scope.ServiceProvider;
 
+                    // Startup.cs : AddDbContext<ApplicationDbContext>
                     var applicationDbContext = serviceProvider.GetRequiredService<ApplicationDbContext>(); // GetRequiredService: ApplicationDbContext kısmında hata oluşursa; GetRequiredService exception fırlatır
 
                     applicationDbContext.Database.Migrate();
