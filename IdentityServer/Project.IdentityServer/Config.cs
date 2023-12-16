@@ -16,8 +16,9 @@ namespace Project.IdentityServer
         {
             new ApiResource("resource_category"){Scopes={"category_fullpermission"}}, 
             new ApiResource("resource_photo_stock"){Scopes={"photo_stock_fullpermission"}},
+            new ApiResource("resource_discount"){Scopes={"discount_fullpermission"}},
+
             // new ApiResource("resource_basket"){Scopes={"basket_fullpermission"}},
-            // new ApiResource("resource_discount"){Scopes={"discount_fullpermission"}},
             // new ApiResource("resource_order"){Scopes={"order_fullpermission"}},
             // new ApiResource("resource_payment"){Scopes={"payment_fullpermission"}},
             // new ApiResource("resource_gateway"){Scopes={"gateway_fullpermission"}},
@@ -43,6 +44,7 @@ namespace Project.IdentityServer
 
                 new ApiScope("category_fullpermission","Category API için full erişim"),
                 new ApiScope("photo_stock_fullpermission","Photo Stock API için full erişim"),
+                new ApiScope("discount_fullpermission","Discount API için full erişim"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 
                 //new ApiScope("scope1"),
@@ -71,7 +73,7 @@ namespace Project.IdentityServer
                    AllowOfflineAccess=true,
                    ClientSecrets= {new Secret("secret".Sha256())},
                    AllowedGrantTypes= GrantTypes.ResourceOwnerPassword, // ResourceOwnerPassword --> IdentityResourceOwnerPasswordValidator.cs'eyi tetikler ve bu da token döner
-                   AllowedScopes={ "basket_fullpermission", "order_fullpermission", "gateway_fullpermission", IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess
+                   AllowedScopes={ "basket_fullpermission", "order_fullpermission", "gateway_fullpermission", "discount_fullpermission", IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess
                     , IdentityServerConstants.LocalApi.ScopeName // client (postman), artık identityserv4'e istek yapabilir
                     , "roles" },
                     AccessTokenLifetime=1*60*60, // 1 saat
