@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 //using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Project.Services.Discount.Services;
+using Project.Shared.Services;
 using System;
 //using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -30,7 +31,13 @@ namespace Project.Services.Discount
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            // ** SharedIdentityService.cs içindeki IHttpContextAccessor kullanabilmek için di olarak ekl...
+            services.AddHttpContextAccessor();
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+
+
+            services.AddScoped<IDiscountService,DiscountService>();
+
 
             services.AddSwaggerGen(c =>
             {
@@ -49,6 +56,7 @@ namespace Project.Services.Discount
                 options.RequireHttpsMetadata = false;
             });
 
+            // services.AddControllers(); 
             services.AddControllers(opt =>
             {
                 opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
