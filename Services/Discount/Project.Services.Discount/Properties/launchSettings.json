@@ -19,9 +19,9 @@
     },
     "Project.Services.Discount": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5014",
+      "applicationUrl": "http://localhost:5014", //** Containers>fashionTemp_Discount_PostgreSQL
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
