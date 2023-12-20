@@ -28,6 +28,15 @@ namespace Project.Services.Discount.Controllers
             return CreateActionResultInstance(await _discountService.GetAll());
         }
 
+        // http://localhost:5014/api/discount/getall2
+        //[HttpGet]
+        //[Route("/api/[controller]/[action]")]
+        //public async Task<IActionResult> GetAll2()
+        //{
+        //    return CreateActionResultInstance(await _discountService.GetAll());
+        //}
+
+
         [HttpGet("{id}")]
         //  [HttpGet("{id}/{name}/{ect}")] HttpMethodAttribute 
         public async Task<IActionResult> GetById(int id)
