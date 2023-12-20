@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Services.Discount",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{11ED1C6B-997A-493F-B681-6B64C4552457}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Services.Basket", "Services\Basket\Project.Services.Basket\Project.Services.Basket.csproj", "{F03EAE9E-1F6B-4852-9513-D5C4C58DAF8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Services.Cart", "Services\Basket\Project.Services.Basket\Project.Services.Cart.csproj", "{F03EAE9E-1F6B-4852-9513-D5C4C58DAF8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

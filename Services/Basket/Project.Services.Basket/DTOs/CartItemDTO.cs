@@ -10,9 +10,10 @@ namespace Project.Services.Basket.DTOs
         public short Amount { get; set; } // Quentity
         public double Product_Price { get; set; }
 
-        public double? SubTotal { get { return Product_Price * Amount; } }
+        //public double? SubTotal_OLD { get { return Product_Price * Amount; } }
+        public double? SubTotal { get => Product_Price * Amount;  }
 
-        public short UnitsInStock { get; set; }
+        public bool UnitsInStock { get; set; }
 
         public CartItemDTO() {
 

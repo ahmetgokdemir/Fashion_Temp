@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Project.Shared.Services
@@ -16,6 +17,7 @@ namespace Project.Shared.Services
 
         //public string GetUserId => throw new NotImplementedException();
         public string GetUserId => _httpContextAccessor.HttpContext.User.FindFirst("sub").Value;
+        // public string GetUserID => _httpContextAccessor.HttpContext.User.Claims.Where(x => x.Type == "sub").FirstOrDefault().Value;
 
     }
 }

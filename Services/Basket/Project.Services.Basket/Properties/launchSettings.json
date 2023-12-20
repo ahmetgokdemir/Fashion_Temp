@@ -10,7 +10,7 @@
   },
   "profiles": {
     // "http": {
-    "Project.Services.Basket": {
+    "Project.Services.Cart": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
