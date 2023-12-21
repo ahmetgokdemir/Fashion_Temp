@@ -67,7 +67,7 @@ namespace Project.Services.Cart.Services
             }
             else
             {
-                //await _db.KeyDeleteAsync(_cartDTO.User_ID);
+                //await _db.KeyDeleteAsync(_cartDTO.User_ID);  
                 status = await _db.StringSetAsync(_cart.User_ID, JsonSerializer.Serialize(_cart));
             }
 
