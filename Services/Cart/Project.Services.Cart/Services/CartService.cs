@@ -68,14 +68,14 @@ namespace Project.Services.Basket.Services
         public async Task<Response<CartDTO>> GetCart(string user_ID)
         {
             //_cartDTO.User_ID = user_ID;
-            var existBasket = await _db.StringGetAsync(user_ID);
+            var existCart = await _db.StringGetAsync(user_ID);
 
-            if (string.IsNullOrEmpty(existBasket))
+            if (string.IsNullOrEmpty(existCart))
             {
                 return Response<CartDTO>.Fail("Cart not found", 404);
             }
 
-            return Response<CartDTO>.Success(JsonSerializer.Deserialize<CartDTO>(existBasket), 200); // ** Deserialize
+            return Response<CartDTO>.Success(JsonSerializer.Deserialize<CartDTO>(existCart), 200); // ** Deserialize
 
         }
 
