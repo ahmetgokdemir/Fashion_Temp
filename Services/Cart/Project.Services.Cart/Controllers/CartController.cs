@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Project.Services.Basket.DTOs;
-using Project.Services.Basket.Services;
+﻿using Microsoft.AspNetCore.Mvc;
+using Project.Services.Cart.DTOs;
+using Project.Services.Cart.Services;
 using Project.Shared.ControllerBases;
 using Project.Shared.Services;
+using System.Threading.Tasks;
 
-namespace Project.Services.Basket.Controllers
+namespace Project.Services.Cart.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,6 +23,12 @@ namespace Project.Services.Basket.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCart()
         {
+            //HttpContext.Session.SetObject("manipulatedData_ufdj", null);
+            //HttpContext.Session.GetObject<CartItemDTO>("manipulatedData_ufdj");
+
+            //var claims = HttpContext.User.Claims;
+            //var claims_2 = User.Claims;
+
             return CreateActionResultInstance(await _cartService.GetCart(_sharedIdentityService.GetUserId));
         }
 

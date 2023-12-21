@@ -1,4 +1,4 @@
-﻿namespace Project.Services.Basket.OptionPatternSettings
+﻿namespace Project.Services.Cart.OptionPatternSettings
 {
     public class RedisSettings
     {

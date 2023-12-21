@@ -1,16 +1,16 @@
 ﻿using StackExchange.Redis;
 
-namespace Project.Services.Basket.Services
+namespace Project.Services.Cart.Services
 {
     public class RedisService
     {
         private readonly string _host;
 
-        private readonly int _port;
+        private readonly short _port;
 
         private ConnectionMultiplexer _ConnectionMultiplexer; // StackExchange
 
-        public RedisService(string host, int port)
+        public RedisService(string host, short port)
         {
             _host = host;
             _port = port;

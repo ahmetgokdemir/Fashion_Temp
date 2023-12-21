@@ -1,8 +1,8 @@
-﻿using Project.Services.Basket.DTOs;
-using Project.Services.Basket.OptionPatternSettings;
+﻿using Project.Services.Cart.DTOs;
 using Project.Shared.DTOs;
+using System.Threading.Tasks;
 
-namespace Project.Services.Basket.Services
+namespace Project.Services.Cart.Services
 {
     public interface ICartService
     {

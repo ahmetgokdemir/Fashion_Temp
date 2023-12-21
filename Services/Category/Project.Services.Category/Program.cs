@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Project.Services.Category.OptionPatternSettings;
 using Project.Services.Category.Services;
@@ -8,8 +7,6 @@ using Project.Services.Category.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

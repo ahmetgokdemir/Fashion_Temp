@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Project.Services.Basket.DTOs
+namespace Project.Services.Cart.DTOs
 {
     public class CartItemDTO
     {

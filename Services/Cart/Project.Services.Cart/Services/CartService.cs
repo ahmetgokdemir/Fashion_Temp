@@ -1,9 +1,12 @@
-﻿using Project.Services.Basket.DTOs;
+﻿using Project.Services.Cart.DTOs;
+using Project.Services.Cart.Services;
 using Project.Shared.DTOs;
 using StackExchange.Redis;
+using System;
 using System.Text.Json;
+using System.Threading.Tasks;
 
-namespace Project.Services.Basket.Services
+namespace Project.Services.Cart.Services
 {
     public class CartService : ICartService
     {

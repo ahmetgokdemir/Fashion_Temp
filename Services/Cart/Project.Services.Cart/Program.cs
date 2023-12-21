@@ -1,26 +1,33 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization; 
 using Microsoft.Extensions.Options;
-using Project.Services.Basket.OptionPatternSettings;
-using Project.Services.Basket.Services;
+using Project.Services.Cart.OptionPatternSettings;
+using Project.Services.Cart.Services;
 using Project.Shared.Services;
-using System.IdentityModel.Tokens.Jwt;
+using System.IdentityModel.Tokens.Jwt; 
 
+// -1 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-// builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
 
-//services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
+//0
+// protect microserv. 
+var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); // Policy kimlik doðrulma için
+
+// builder.Services.AddControllers();
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy)); // Policy
+});
+
+//1
 builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
+
 
 builder.Services.AddSingleton<RedisService>(sp =>
 {
@@ -33,14 +40,13 @@ builder.Services.AddSingleton<RedisService>(sp =>
     return redis;
 });
 
+// 2
 builder.Services.AddHttpContextAccessor(); // * SharedIdentityService --> IHttpContextAccessor ( httpcontext'e eriþilebilir)
 
 builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 builder.Services.AddScoped<ICartService, CartService>();
 
-// protect microserv. 
-var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); // Policy kimlik doðrulma için
-
+// 3
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -50,16 +56,18 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     options.RequireHttpsMetadata = false;
 });
 
-builder.Services.AddControllers(opt =>
-{
-    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy)); // Policy
-});
+
+/////////////////////////////////////////////////////////////////////////
+///
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 
 

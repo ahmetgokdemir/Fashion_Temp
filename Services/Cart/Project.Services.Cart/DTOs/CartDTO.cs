@@ -1,4 +1,7 @@
-﻿namespace Project.Services.Basket.DTOs
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Project.Services.Cart.DTOs
 {
     public class CartDTO
     {
