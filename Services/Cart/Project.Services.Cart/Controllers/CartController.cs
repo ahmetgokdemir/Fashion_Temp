@@ -26,8 +26,8 @@ namespace Project.Services.Cart.Controllers
             //HttpContext.Session.SetObject("manipulatedData_ufdj", null);
             //HttpContext.Session.GetObject<CartItemDTO>("manipulatedData_ufdj");
 
-            //var claims = HttpContext.User.Claims;
-            //var claims_2 = User.Claims;
+            var claims = HttpContext.User.Claims;
+            var claims_2 = User.Claims;
 
             return CreateActionResultInstance(await _cartService.GetCart(_sharedIdentityService.GetUserId));
         }

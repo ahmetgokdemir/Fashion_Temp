@@ -40,7 +40,10 @@ namespace Project.Services.Cart.Services
 
         public async Task<Response<bool>> AddToCart(CartItemDTO _cartItem, string user_ID)
         {
-            _cartDTO.AddToCart(_cartItem);
+            var existCart = await _db.StringGetAsync(user_ID);
+            CartDTO _cart = JsonSerializer.Deserialize<CartDTO>(existCart);
+
+            _cart.AddToCart(_cartItem);
             _cartDTO.User_ID = user_ID;
 
             var status = await _db.StringSetAsync(_cartDTO.User_ID, JsonSerializer.Serialize(_cartDTO));
