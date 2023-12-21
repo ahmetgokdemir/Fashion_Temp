@@ -27,15 +27,15 @@ namespace Project.Services.Cart.Services
             //  HttpContext.Session.SetObject("manipulatedData_ufdj", null);
             //  HttpContext.Session.GetObject<UserFoodJunctionDTO>("manipulatedData_ufdj");
 
-            if (_cartDTO.MyCartList == null)
-            {
-                _cartDTO = new CartDTO();
-            }
-
-            //if (_cartDTO == null)
+            //if (_cartDTO.MyCartList == null)♦4♦♦
             //{
             //    _cartDTO = new CartDTO();
             //}
+
+            if (_cartDTO == null)
+            {
+                _cartDTO = new CartDTO();
+            }
         }
 
         public async Task<Response<bool>> AddToCart(CartItemDTO _cartItem, string user_ID)
