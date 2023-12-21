@@ -44,28 +44,31 @@ namespace Project.Services.Cart.Services
             CartDTO _cart = JsonSerializer.Deserialize<CartDTO>(existCart);
 
             _cart.AddToCart(_cartItem);
-            _cartDTO.User_ID = user_ID;
+            _cart.User_ID = user_ID;
 
-            var status = await _db.StringSetAsync(_cartDTO.User_ID, JsonSerializer.Serialize(_cartDTO));
+            var status = await _db.StringSetAsync(_cart.User_ID, JsonSerializer.Serialize(_cart));
 
             return status ? Response<bool>.Success(204) : Response<bool>.Fail("Cart could not save", 500);
         }
 
         public async Task<Response<bool>> DeleteFromCart(string product_ID, string user_ID)
         {
-            _cartDTO.DeleteFromCart(product_ID);
+            var existCart = await _db.StringGetAsync(user_ID);
+            CartDTO _cart = JsonSerializer.Deserialize<CartDTO>(existCart);
+
+            _cart.DeleteFromCart(product_ID);
 
             var status = false;
 
-            if (_cartDTO.MyCartList == null)
+            if (_cart.MyCartList().Count == 0)
             {
-                status = await _db.KeyDeleteAsync(_cartDTO.User_ID);
+                status = await _db.KeyDeleteAsync(_cart.User_ID);
                 // var status = await _redisService.GetDb().KeyDeleteAsync(userId);
             }
             else
             {
-                await _db.KeyDeleteAsync(_cartDTO.User_ID);
-                status = await _db.StringSetAsync(_cartDTO.User_ID, JsonSerializer.Serialize(_cartDTO));
+                //await _db.KeyDeleteAsync(_cartDTO.User_ID);
+                status = await _db.StringSetAsync(_cart.User_ID, JsonSerializer.Serialize(_cart));
             }
 
             return status ? Response<bool>.Success(204) : Response<bool>.Fail("Cart not found", 404);

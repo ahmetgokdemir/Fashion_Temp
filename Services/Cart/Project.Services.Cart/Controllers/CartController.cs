@@ -41,11 +41,11 @@ namespace Project.Services.Cart.Controllers
             return CreateActionResultInstance(response);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteFromCart(string product_ID)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteFromCart(string id)
 
         {
-            return CreateActionResultInstance(await _cartService.DeleteFromCart(product_ID, _sharedIdentityService.GetUserId));
+            return CreateActionResultInstance(await _cartService.DeleteFromCart(id, _sharedIdentityService.GetUserId));
         }
     }
 }
