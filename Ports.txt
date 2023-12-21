@@ -2,8 +2,8 @@
 
 
 Services:
-- catalogAPI	-> 5011
-- basketAPI		-> 5013
+- categoryAPI	-> 5011
+- cartAPI		-> 5013
 - discountAPI	-> 5014
 ---------------
 
