@@ -35,7 +35,7 @@ namespace Project.Services.Cart.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToCart(CartItemDTO _cartItem)
         {
-            string user_ID = _sharedIdentityService.GetUserId;
+            string user_ID = _sharedIdentityService.GetUserId; // SharedIdentityService.cs
             var response = await _cartService.AddToCart(_cartItem, user_ID);
 
             return CreateActionResultInstance(response);

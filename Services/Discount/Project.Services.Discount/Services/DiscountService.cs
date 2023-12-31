@@ -18,7 +18,7 @@ namespace Project.Services.Discount.Services
         public DiscountService(IConfiguration configuration)
         {
             _configuration = configuration;
-            _dbConnection = new NpgsqlConnection(_configuration.GetConnectionString("PostgreSql"));
+            _dbConnection = new NpgsqlConnection(_configuration.GetConnectionString("PostgreSql")); // ** NpgsqlConnection -- PostgreSql(appsettşngs.json)
         }
 
         public async Task<Response<NoContent>> DeleteById(int id)

@@ -40,7 +40,7 @@ namespace Project.Services.Cart.Services
 
         public async Task<Response<bool>> AddToCart(CartItemDTO _cartItem, string user_ID)
         {
-            var existCart = await _db.StringGetAsync(user_ID);
+            var existCart = await _db.StringGetAsync(user_ID); // from memory cache
             CartDTO _cart;
 
             if (!existCart.IsNullOrEmpty)
