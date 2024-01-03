@@ -11,12 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Project.Shared\Project.Shared.csproj" />
     <ProjectReference Include="..\Project.Services.Order.Domain\Project.Services.Order.Domain.csproj" />
     <ProjectReference Include="..\Project.Services.Order.Infrastructure\Project.Services.Order.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mapping\" />
   </ItemGroup>
 
 </Project>

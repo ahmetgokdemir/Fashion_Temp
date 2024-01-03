@@ -15,7 +15,7 @@ namespace Project.Services.Order.Domain.OrderAggregate
         public DateTime CreatedDate { get; private set; } = DateTime.Now;
         public Address Address { get; private set; }
 
-        public string User_ID { get; private set; } // Customer
+        public string Customer_ID { get; private set; } // Customer
 
         // field
         private readonly List<OrderItem> _orderItems;
@@ -33,7 +33,7 @@ namespace Project.Services.Order.Domain.OrderAggregate
         {
             _orderItems = new List<OrderItem>(); // çağrı hocanın bahsettiği durum...
             CreatedDate = DateTime.Now;
-            User_ID = userID;
+            Customer_ID = userID;
             Address = address;
         }
 
