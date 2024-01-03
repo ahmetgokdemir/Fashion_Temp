@@ -56,7 +56,7 @@ namespace Project.Services.Cart.DTOs
             _cartItems.Where(x => x.Value.Product_ID == id).Single().Value.Amount = _amount;
          }
 
-        public double? TotalPrice { get => _cartItems.Sum(x => x.Value.SubTotal); }
+        public decimal? TotalPrice { get => _cartItems.Sum(x => x.Value.SubTotal); }
 
         //public decimal? TotalPrice
         //{

@@ -5,6 +5,7 @@ Services:
 - categoryAPI	-> 5011
 - cartAPI		-> 5013
 - discountAPI	-> 5014
+- orderAPI		-> 5015
 ---------------
 
 - identityserver4	-> 5001

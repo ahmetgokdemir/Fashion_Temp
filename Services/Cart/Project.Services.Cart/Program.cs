@@ -35,7 +35,7 @@ builder.Services.AddSingleton<RedisService>(sp =>
 
     var redis = new RedisService(redisSettings.Host, redisSettings.Port); // RedisService.cs
 
-    redis.Connect();
+    redis.Connect(); //* 
 
     return redis;
 });

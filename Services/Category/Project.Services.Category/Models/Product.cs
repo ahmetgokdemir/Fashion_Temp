@@ -12,7 +12,7 @@ namespace Project.Services.Category.Models
         public string Product_Name { get; set; }
 
         [BsonRepresentation(BsonType.Decimal128)]
-        public decimal Price { get; set; }
+        public decimal Price { get; set; } // no double
 
         public string Description { get; set; }
 
