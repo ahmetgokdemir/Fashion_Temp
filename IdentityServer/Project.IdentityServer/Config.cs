@@ -67,7 +67,7 @@ namespace Project.IdentityServer
                         , IdentityServerConstants.LocalApi.ScopeName 
                     }
                 },
-                new Client
+                new Client 
                 {
                    ClientName="Asp.Net Core MVC",
                    ClientId="WebMvcClientForUser",

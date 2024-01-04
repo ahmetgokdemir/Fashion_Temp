@@ -25,7 +25,7 @@ namespace Project.Services.Order.API.Controllers
         {
             var response = await _mediator.Send(new GetOrdersByUserIdQuery { User_ID = _sharedIdentityService.GetUserId });
 
-            return CreateActionResultInstance(response);
+            return CreateActionResultInstance(response); 
         }
 
         [HttpPost]
