@@ -23,11 +23,11 @@ namespace Project.Services.Order.Domain.OrderAggregate
 
         public Address(string province, string district, string street, string zipCode, string line)
         {
-            //Province = province;
-            //District = district;
-            //Street = street;
-            //ZipCode = zipCode;
-            //Line = line;
+            Province = province;
+            District = district;
+            Street = street;
+            ZipCode = zipCode;
+            Line = line;
         }
 
         protected override IEnumerable<object> GetEqualityComponents() //** ValueObject

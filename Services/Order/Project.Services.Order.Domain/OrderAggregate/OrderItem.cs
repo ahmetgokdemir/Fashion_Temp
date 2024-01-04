@@ -29,12 +29,12 @@ namespace Project.Services.Order.Domain.OrderAggregate
 
         public OrderItem(string productId, string productName, string pictureUrl, decimal price)
         {
-            //Product_ID = productId;
+            Product_ID = productId;
 
-            //Product_Name = productName;
+            Product_Name = productName;
             Product_Price = price;
 
-            //PictureUrl = pictureUrl;
+            PictureUrl = pictureUrl;
 
             ++Amount;
         }
