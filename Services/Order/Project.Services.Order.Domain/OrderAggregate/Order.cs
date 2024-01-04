@@ -21,15 +21,15 @@ namespace Project.Services.Order.Domain.OrderAggregate
         private readonly List<OrderItem> _orderItems;
 
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems; // unable to set..
-        public IReadOnlyCollection<OrderItem> OrderItems_2 { get; }  
-        public IReadOnlyCollection<OrderItem> OrderItems_3 { get { return _orderItems; } }
-        public IReadOnlyCollection<OrderItem> OrderItems_4 { get => _orderItems; }
-        public IReadOnlyCollection<OrderItem> OrderItems_5 { get; set; }
+        //public IReadOnlyCollection<OrderItem> OrderItems_2 { get; }  
+        //public IReadOnlyCollection<OrderItem> OrderItems_3 { get { return _orderItems; } }
+        //public IReadOnlyCollection<OrderItem> OrderItems_4 { get => _orderItems; }
+        //public IReadOnlyCollection<OrderItem> OrderItems_5 { get; set; }
 
-        public List<OrderItem> _orderItems_MINE { get; private set; } // Customer
+        //public List<OrderItem> _customItems { get; private set; } // Customer
 
 
-
+        // default constructor yazmamız lazım. zira custom constructor yazdığımız için.. bu bir kuraldır)....      
         public Order()
         {
         }
@@ -37,7 +37,7 @@ namespace Project.Services.Order.Domain.OrderAggregate
         public Order(string customer_ID, Address address)
         {
             _orderItems = new List<OrderItem>(); // çağrı hocanın bahsettiği durum...
-            _orderItems_MINE = new List<OrderItem>();
+            //_customItems = new List<OrderItem>();
 
             CreatedDate = DateTime.Now;
             Customer_ID = customer_ID;
