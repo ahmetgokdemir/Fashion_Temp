@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project.Services.Order.BLL.Commands
 {
-    public class CreateOrderCommand : IRequest<Response<CreatedOrderDto>>
+    public class CreateOrderCommand : IRequest<Response<CreatedOrderDto>> // CreateOrderCommandHandler.cs'de sonunda, CreatedOrderDto.cs'nin field'i olan OrderId geriye dönülecek...
     {
         public string Customer_ID { get; set; }
 

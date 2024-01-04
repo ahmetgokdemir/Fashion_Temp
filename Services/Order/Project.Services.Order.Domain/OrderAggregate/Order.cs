@@ -19,21 +19,28 @@ namespace Project.Services.Order.Domain.OrderAggregate
 
         // field
         private readonly List<OrderItem> _orderItems;
+
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems; // unable to set..
         public IReadOnlyCollection<OrderItem> OrderItems_2 { get; }  
         public IReadOnlyCollection<OrderItem> OrderItems_3 { get { return _orderItems; } }
         public IReadOnlyCollection<OrderItem> OrderItems_4 { get => _orderItems; }
         public IReadOnlyCollection<OrderItem> OrderItems_5 { get; set; }
 
+        public List<OrderItem> _orderItems_MINE { get; private set; } // Customer
+
+
+
         public Order()
         {
         }
 
-        public Order(string userID, Address address)
+        public Order(string customer_ID, Address address)
         {
             _orderItems = new List<OrderItem>(); // çağrı hocanın bahsettiği durum...
+            _orderItems_MINE = new List<OrderItem>();
+
             CreatedDate = DateTime.Now;
-            Customer_ID = userID;
+            Customer_ID = customer_ID;
             Address = address;
         }
 
@@ -51,8 +58,6 @@ namespace Project.Services.Order.Domain.OrderAggregate
 
            OrderItem existProductItem = _orderItems.Where(x => x.Product_ID == product_ID).SingleOrDefault();
             ++ existProductItem.Amount;
-
-
 
         }
 

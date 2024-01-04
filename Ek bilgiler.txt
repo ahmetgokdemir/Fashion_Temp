@@ -1,17 +1,19 @@
 ﻿
-
-http://localhost:5011/api/Category MongoDB    --> https değil; http 
-
-MongoDB Container 
-
-
 https://localhost:9443/#!/auth 
 https://localhost:9443/#!/home   --> açılmazsa Docker uygulamasındaki Containers bölümünde bulunan Portainer restart et..
 admin
 Portainer<..3..2..
 
+
+
+http://localhost:5011/api/Category MongoDB    --> https değil; http 
+MongoDB Container 
+
+
+
 SQL Server Container ↓
-fashionTemp_sqlserverDB
+fashionTemp_IdentityServer_SQLServerDB 
+
 sa
 Technosoft-9913
 
@@ -36,3 +38,15 @@ fashionTemp_Discount_PostgreSQL Container
 
 sa
 Technosoft-9913
+
+------------------------------
+
+  fashionTemp_Order_SQLServerDB  --> SQL Server container Microsoft SQL Server on Linux
+
+sa
+Technosoft-9913
+
+host 1444 cointainer 1433
+
+"DefaultConnection": "Server=localhost,1444;Database=OrderDb; User=sa; Password=Password12*"
+------------------------------

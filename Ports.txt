@@ -2,13 +2,13 @@
 
 
 Services:
-- categoryAPI	-> 5011
-- cartAPI		-> 5013
-- discountAPI	-> 5014
-- orderAPI		-> 5015
+- categoryAPI	-> 5011     // 27017:27017
+- cartAPI		-> 5013    // 6379:6379
+- discountAPI	-> 5014   /// 5432:5432
+- orderAPI		-> 5015    ///     1444:1433       
 ---------------
 
-- identityserver4	-> 5001
+- identityserver4	-> 5001  /// 1433:1433
 
 
 
